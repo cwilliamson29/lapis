@@ -7,9 +7,10 @@
 
 const navBar = document.getElementById('navbar');
 const respMenu = document.getElementById('respMenu');
+const navLinks = document.getElementById('navLinks');
+
 respMenu.addEventListener('click', () => {
-    const navLinks = document.getElementById('navLinks');
-    //navLinks.style.display = "none";
+
     const navOpen = navLinks.style.display;
 
     if (navOpen === "") {
@@ -31,3 +32,18 @@ for (let i = 0; i < li.length;) {
     });
     ++i
 }
+
+function menu(name) {
+    const li = document.createElement('li');
+    const lk = document.createElement('a');
+    lk.setAttribute('href', `${name}.html`);
+    lk.innerText = name.toUpperCase();
+
+    navLinks.appendChild(li);
+    li.appendChild(lk);
+}
+
+menu("about");
+menu("services");
+menu("portfolio");
+menu("contact us");
